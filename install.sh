@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-opkg update && opkg install aircrack-ng
+opkg update && opkg install aircrack-ng openssh-sftp-server
 iw phy phy0 interface add mon0 type monitor
 ifconfig mon0 up
 sed -i 's/exit 0//' /etc/rc.local
