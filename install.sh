@@ -7,4 +7,5 @@ echo "ifconfig mon0 up" >> /etc/rc.local
 echo "exit 0" >> /etc/rc.local
 chmod +x /etc/rc.local
 sh /etc/rc.local
+aircrack-ng --help && airodump-ng --help && aireplay-ng --help
 airodump-ng mon0
