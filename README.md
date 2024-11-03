@@ -13,9 +13,15 @@ telnet 192.168.1.1
 ## Auto install 
 ```sh
 
-opkg update && opkg install curl && curl https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install.sh | sh
+opkg update && opkg install curl && curl https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/monitor_mode.sh | sh
 ````
-## Setup
+
+# Run
+```sh
+sh monitor_mode.sh && airodump-ng mon0
+```
+
+## Manual
 > More info
  - aireplay-ng --help
  - airodump-ng --help
