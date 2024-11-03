@@ -9,6 +9,17 @@ ssh root@192.168.1.1
 ```sh
 telnet 192.168.1.1
 ```
+# Mipsel_24kc only 
+> Any Openwrt running in this Processors
+ - mt7620
+ - mt7621
+ - mt76x8
+ - rt288x
+ - rt305x
+ - rt3883
+```sh
+wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mdk4_4.2-5_mipsel_24kc.ipk && opkg install mdk4.ipk
+```
 
 ## Auto install 
 ```sh
