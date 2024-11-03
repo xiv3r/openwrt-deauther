@@ -20,6 +20,10 @@ opkg update && opkg install curl && curl https://raw.githubusercontent.com/xiv3r
 ```sh
 sh monitor_mode.sh && airodump-ng mon0
 ```
+> ctrl + c
+```sh
+aireplay-ng --deauth 0 -a (Mac BSSID)
+```
 
 ## Manual
 > More info
