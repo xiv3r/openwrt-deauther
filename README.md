@@ -15,7 +15,7 @@ telnet 192.168.1.1
 
 opkg update && opkg install curl && curl https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install.sh | sh
 ````
-## commands
+## Setup
 > More info
  - aireplay-ng --help
  - airodump-ng --help
@@ -23,7 +23,7 @@ opkg update && opkg install curl && curl https://raw.githubusercontent.com/xiv3r
 
 `iw phy phy0 interface add mon0 type monitor`
 
-`ifconfig mon0 up`
+`ip link set mon0 up`
 
 `airodump-ng mon0`
 
