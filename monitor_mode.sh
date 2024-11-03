@@ -13,8 +13,10 @@ echo "exit 0" >> /etc/rc.local
 
 # Make Executable
 chmod +x /etc/rc.local
-sh /etc/rc.local
+cp /etc/rc.local /root/monitor_mode.sh
+sed -i 's/exit 0//' /root/monitor_mode.sh
+chmod +x monitor_mode.sh
+sh monitor_mode.sh
 
 # Launch airodump
-aircrack-ng --help && airodump-ng --help && aireplay-ng --help
 airodump-ng mon0
