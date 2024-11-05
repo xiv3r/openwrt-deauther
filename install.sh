@@ -6,7 +6,6 @@ opkg install mdk4.ipk
 
 echo "
 iw phy phy0 interface add mon0 type monitor
-sleep 1s
 echo 'monitor mode mon0 enable'
 ip link set mon0 up
 " > mon.sh
