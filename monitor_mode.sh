@@ -7,7 +7,7 @@ echo "
 echo 'mon0 monitor mode enable'
 iw phy phy0 interface add mon0 type monitor
 ip link set mon0 up
-" >> monitor-mode.sh
+" > monitor-mode.sh
 
 # Make Executable
 chmod +x monitor-mode.sh
