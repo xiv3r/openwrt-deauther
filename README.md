@@ -1,4 +1,4 @@
-# openwrt deauther based on airplay-ng
+# openwrt deauther based on airplay-ng 
 - Functions similar on kali
 - Also it can capture WPA Handshakes
 
