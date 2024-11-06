@@ -24,7 +24,7 @@ opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-
 ## Auto install 
 ```sh
 
-opkg update && opkg install curl && curl https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install.sh | sh
+opkg update && wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install.sh | sh
 ````
 
 # Using aireplay-ng 
