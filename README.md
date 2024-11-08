@@ -1,6 +1,6 @@
 # openwrt deauther based on airplay-ng 
 - Functions similar on kali
-- Also it can capture WPA Handshakes
+- Can also capture WPA Handshakes
 
 ## Root access 
 ```sh
@@ -21,7 +21,7 @@ telnet 192.168.1.1
 opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mdk4_4.2-5_mipsel_24kc.ipk && opkg install mdk4.ipk
 ```
 
-## Auto install 
+# Auto install 
 ```sh
 
 opkg update && wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install.sh | sh
