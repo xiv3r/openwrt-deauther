@@ -67,8 +67,10 @@ sh wlan0mon.sh && mdk4 wlan0mon d
 ## Export handshake or files from openwrt to local storage
 > [!Tip]
 > install SFTP server in both system in order that SCP to work
-> Openwrt: opkg install openssh-sftp-server
-> Linux/Termux: apt install openssh-sftp-server
+
+> Openwrt: `opkg install openssh-sftp-server`
+
+> Linux/Termux: `apt install openssh-sftp-server`
 
 - Termux Terminal 
 ```sh
