@@ -1,6 +1,7 @@
-# openwrt deauther based on airplay-ng 
+# openwrt deauther based on airplay-ng and mdk4
 - Functions similar on kali
 - Can also capture WPA Handshakes
+- Stable on openwrt version 22.03.*
 
 ## Root access 
 ```sh
@@ -10,13 +11,14 @@ ssh root@192.168.1.1
 telnet 192.168.1.1
 ```
 # Mipsel_24kc only 
-> Any Openwrt running in this processors is supported by [mdk4](https://downloads.openwrt.org/releases/23.05.5/targets/ramips/)
+> Any Openwrt running in this RoC is supported by [mdk4](https://downloads.openwrt.org/releases/23.05.5/targets/ramips/)
  - mt7620
  - mt7621
  - mt76x8
  - rt288x
  - rt305x
  - rt3883
+ - 
 ```sh
 opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mdk4_4.2-5_mipsel_24kc.ipk && opkg install mdk4.ipk
 ```
@@ -78,4 +80,4 @@ scp root@192.168.1.1:*.cap /home/*/Downloads
 ```
 
 > [Hint!]
- - *.cap - export any name with .cap file format
+ - * .cap - export any name with .cap file format
