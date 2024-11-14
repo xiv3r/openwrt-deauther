@@ -81,5 +81,5 @@ scp root@192.168.1.1:*.cap storage/downloads
 scp root@192.168.1.1:*.cap /home/*/Downloads
 ```
 
-> [Hint!]
- - * .cap - export any name with .cap file format
+> [!Tip]
+ > * .cap - export any name with .cap file format
