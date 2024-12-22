@@ -10,15 +10,7 @@ ssh root@192.168.1.1
 ```sh
 telnet 192.168.1.1
 ```
-# Mipsel_24kc only 
-> Any Openwrt running in this RoC is supported by [mdk4](https://downloads.openwrt.org/releases/23.05.5/targets/ramips/)
- - mt7620
- - mt7621
- - mt76x8
- - rt288x
- - rt305x
- - rt3883
- - 
+# MDK4 for Mipsel_24kc
 ```sh
 opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mdk4_4.2-5_mipsel_24kc.ipk && opkg install mdk4.ipk
 ```
@@ -64,7 +56,7 @@ sh wlan0mon.sh && mdk4 wlan0mon d
 
 - -a | bssid -a (32:AA:E4:18:90:45)
 
-## Export handshake or files from openwrt to local storage
+## Export handshake file from openwrt to local storage
 > [!Tip]
 > install SFTP server in both system in order that SCP to work
 
