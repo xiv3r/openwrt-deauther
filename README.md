@@ -18,7 +18,7 @@ telnet 192.168.1.1
 
 # Auto Install
 ```sh
-opkg update && wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install.sh | sh
+opkg update && wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install.sh | bash
 ````
 
 # Using mdk4
