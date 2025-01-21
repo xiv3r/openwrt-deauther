@@ -1,7 +1,12 @@
-# openwrt deauther based on airplay-ng and mdk4
-- Functions similar on kali
-- Can also capture WPA Handshakes
-- Stable on openwrt version 22.03.*
+# Requirements 
+- Mediatek MT7628* chipset router
+- Mipsel-24kc package
+- Openwrt firmware version 22.03.*
+
+# Notes
+- Functions similar on linux aircrack-ng aireplay-ng and mdk4
+- Can also capture WPA2 WPAWPA2PSK Handshakes
+- Doesn't work on openwrt version 23.*.* up
 
 ## Root access 
 ```sh
@@ -10,17 +15,20 @@ ssh root@192.168.1.1
 ```sh
 telnet 192.168.1.1
 ```
-# MDK4 for Mipsel_24kc
-```sh
-opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mdk4_4.2-5_mipsel_24kc.ipk && opkg install mdk4.ipk
-```
 
-# Auto install 
+# Auto Install
 ```sh
 opkg update && wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install.sh | sh
 ````
 
+# Using mdk4
+> install mdk4
+```sh
+opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mdk4_4.2-5_mipsel_24kc.ipk && opkg install mdk4.ipk
+```
+
 # Using aireplay-ng 
+> run monitor mode
 ```sh
 sh wlan0mon.sh && airodump-ng wlan0mon
 ```
@@ -28,7 +36,7 @@ sh wlan0mon.sh && airodump-ng wlan0mon
 ```sh
 aireplay-ng wlan0mon --deauth 0 -a (Mac BSSID)
 ```
-# Monitor Mode 
+# Monitor Mode
 ```sh
 wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/wlan0mon.sh | sh
 ```
