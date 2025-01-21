@@ -10,7 +10,7 @@ echo 'monitor mode enable in wlan0mon'
 ip link set wlan0mon up
 EOF
 #
-chmod +x wlan0monmon.sh
+chmod +x wlan0mon.sh
 #
 bash wlan0mon.sh && mdk4 wlan0mon d
 
