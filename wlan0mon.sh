@@ -1,9 +1,9 @@
 #!/bin/sh
 
-echo "
+cat > wlan0mon << EOF
 iw phy phy0 interface add wlan0mon type monitor
-echo 'wlan0mon in monitor mode'
+echo "wlan0mon monitor mode enabled"
 ip link set wlan0mon up
-" > wlan0mon.sh
-chmod +x wlan0mon.sh
-sh wlan0mon.sh
+EOF
+chmod +x wlan0mon
+sh wlan0mon
