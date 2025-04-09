@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 opkg update
 wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mdk4_4.2-5_mipsel_24kc.ipk
