@@ -18,7 +18,7 @@ telnet 192.168.1.1
 
 # Auto Install
 ```sh
-opkg update && wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install.sh | bash
+opkg update && wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install | sh
 ````
 
 # Using mdk4
@@ -30,7 +30,7 @@ opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-
 # Using aireplay-ng 
 > run monitor mode
 ```sh
-sh wlan0mon.sh && airodump-ng wlan0mon
+sh wlan0mon && airodump-ng wlan0mon
 ```
 > ctrl + c
 ```sh
@@ -38,15 +38,15 @@ aireplay-ng wlan0mon --deauth 0 -a (Mac BSSID)
 ```
 # Monitor Mode
 ```sh
-wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/wlan0mon.sh | sh
+wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/wlan0mon | sh
 ```
 # Run
 ```sh
-sh wlan0mon.sh
+sh wlan0mon
 ```
 # Using mdk4
 ```sh
-sh wlan0mon.sh && mdk4 wlan0mon d
+sh wlan0mon && mdk4 wlan0mon d
 ```
 ## Manual
 > More info
