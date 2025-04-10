@@ -1,6 +1,8 @@
 #!/bin/sh
 
 opkg update
+opkg install airmon-ng aircrack-ng airodump-ng
+#
 wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mdk4_4.2-5_mipsel_24kc.ipk
 opkg install mdk4.ipk
 
