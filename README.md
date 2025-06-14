@@ -63,7 +63,7 @@ sh wlan0mon && airodump-ng wlan0mon
 ```
 > 2.Deauth a specific target BSSID
 ```
-mdk4 wlan0mon d -B (BSSID) -m
+mdk4 wlan0mon d -B (BSSID)
 ```
 > 3.Deauth all
 ```
