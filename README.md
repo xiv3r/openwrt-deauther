@@ -1,11 +1,11 @@
 # Requirements 
-- Mediatek MT7628* chipset router
-- Mipsel-24kc package
+- Mediatek MT7628DAN Router Chipset
+- Mipsel_24kc .ipk package
 - Openwrt firmware version 22.03.*
 
 # Install package 
 ```
-opkg update && opkg install airmon-ng airodump-ng aircrack-ng
+opkg update && opkg install airmon-ng aircrack-ng
 ```
 # Install mdk4
 > (mipsel_24kc)
@@ -15,8 +15,8 @@ opkg update && wget -O mdk4.ipk https://raw.githubusercontent.com/xiv3r/openwrt-
 
 # Notes
 - Functions similar on linux aircrack-ng aireplay-ng and mdk4
-- Can also capture WPA2 WPAWPA2PSK Handshakes
-- Doesn't work on openwrt version 23.*.* up
+- Can capture WPA/WPA2 Handshake
+- Doesn't work for openwrt version 23, 24 and 25
 
 # Root access 
 ```sh
